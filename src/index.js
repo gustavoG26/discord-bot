@@ -37,7 +37,7 @@ client.on('messageCreate', message => { //Listens for the messageCreate event, t
     if (!client.commands.has(commandName)) return; // checks if the command exists in the collection
 
     try {
-        client.commands.get(commandName).execute(message); //executes the command that matches the commandName
+        client.commands.get(commandName).execute(message, args); //executes the command that matches the commandName
     } catch (error) {//catches any errors that occur during command execution
         console.error(error);
         message.reply('There was an error executing that command!');
